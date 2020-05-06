@@ -15,6 +15,9 @@ final class Product
     private $variantUuid; //" => "c2a45f90-269e-11e7-9657-51506d0a8492"
     private $name; //" => "Munten"
     private $variantName; //" => "20 munten"
+    private $comment; //" => "i like munten"
+    private $categoryName; //" => "Pennies"
+    private $categoryUuid; //" => "5ed40c70-567c-11ea-ba9c-3338e0467dba"
     private $quantity; //" => "1"
     private $unitPrice; //" => 1000
     private $vatPercentage; //" => 0.0
@@ -28,6 +31,9 @@ final class Product
         ?UuidInterface $variantUuid = null,
         ?string $name = null,
         ?string $variantName = null,
+        ?string $comment = null,
+        ?string $categoryName = null,
+        ?UuidInterface $categoryUuid = null,
         int $quantity,
         Money $unitPrice,
         float $vatPercentage,
@@ -40,6 +46,9 @@ final class Product
         $this->variantUuid = $variantUuid;
         $this->name = $name;
         $this->variantName = $variantName;
+        $this->comment = $comment;
+        $this->categoryName = $categoryName;
+        $this->categoryUuid = $categoryUuid;
         $this->quantity = $quantity;
         $this->unitPrice = $unitPrice;
         $this->vatPercentage = $vatPercentage;
@@ -67,6 +76,21 @@ final class Product
     public function getVariantName()
     {
         return $this->variantName;
+    }
+
+    public function getComment()
+    {
+        return $this->comment;
+    }
+
+    public function getCategoryName()
+    {
+        return $this->categoryName;
+    }
+
+    public function getCategoryUuid()
+    {
+        return $this->categoryUuid;
     }
 
     public function getQuantity(): int
